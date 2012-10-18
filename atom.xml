@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Myriad Meanderings]]></title>
-  <link href="http://adhipg.in/atom.xml" rel="self"/>
-  <link href="http://adhipg.in/"/>
-  <updated>2012-10-18T01:56:23+01:00</updated>
-  <id>http://adhipg.in/</id>
+  <link href="http://adhipg.github.com/atom.xml" rel="self"/>
+  <link href="http://adhipg.github.com/"/>
+  <updated>2012-10-18T02:07:34+01:00</updated>
+  <id>http://adhipg.github.com/</id>
   <author>
     <name><![CDATA[Adhip Gupta]]></name>
     <email><![CDATA[hello@adhipg.in]]></email>
