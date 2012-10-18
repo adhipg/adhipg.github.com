@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://adhipg.github.com
+url: http://adhipg.in
 title: Myriad Meanderings
 # subtitle: Adhip Gupta
 author: Adhip Gupta
@@ -94,7 +94,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-6480484-4
 
 # Facebook Like
 facebook_like: false
