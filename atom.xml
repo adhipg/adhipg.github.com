@@ -4,7 +4,7 @@
   <title><![CDATA[Adhip Gupta]]></title>
   <link href="http://adhipg.in/atom.xml" rel="self"/>
   <link href="http://adhipg.in/"/>
-  <updated>2013-01-06T17:23:42+00:00</updated>
+  <updated>2013-01-20T11:01:44+00:00</updated>
   <id>http://adhipg.in/</id>
   <author>
     <name><![CDATA[Adhip Gupta]]></name>
@@ -12,5 +12,81 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating sub-repositories from your git repository]]></title>
+    <link href="http://adhipg.in/notes/creating-sub-repositories-from-your-git-repository/"/>
+    <updated>2013-01-20T00:27:00+00:00</updated>
+    <id>http://adhipg.in/notes/creating-sub-repositories-from-your-git-repository</id>
+    <content type="html"><![CDATA[<p>So you have a nice big project that you&#8217;ve been working on for a while and you
+are at a state where you think it will be nice to split a part of the project.
+This can be to either create it as a library to use it with other projects or
+just maintain it independantly.</p>
+
+<p>There are two steps involved:</p>
+
+<ul>
+<li>Splitting out the subpath from the repository and creating a new repository
+from it.</li>
+<li>Using this new git repository we&#8217;ve created in the main repository so that we
+can continue working.</li>
+</ul>
+
+
+<p>Let&#8217;s tackle them one at a time.</p>
+
+<h2>Splitting a subpath into a new repository</h2>
+
+<p>I&#8217;m assuming that we&#8217;re interested in keeping the git history - else, you can
+simply just copy out the directory into a new folder and init it as a new
+repository.</p>
+
+<h4>Using <code>git filter-branch</code></h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git filter-branch --prune=empty --subdirectory-filter my-api -- --all</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>-- --all</code> is to ensure that we filter all the branches in the repository.</p>
+
+<p>Next, you simply add new remotes and push your repository there.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add my-new-remote git@github.com:adhipg/new-remote.git
+</span><span class='line'>git push --all</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Side note: You&#8217;ll have to clone the original repository again.</p>
+
+<h4>Using <code>git subtree</code></h4>
+
+<p><a href="https://github.com/gitster/git/blob/634392b26275fe5436c0ea131bc89b46476aa4ae/contrib/subtree/git-subtree.txt"><code>git subtree</code></a>
+is a new git command that recently was added into git. Using it to create the
+new repository is simple enough:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git subtree split --prefix my-api --branch my-api-repo</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now the <code>my-api-repo</code> branch consists of just the contents from my-api and all
+the relevant commits. This can now be used to push to a new remote:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git push git@github.com:adhipg/new-remote.git split:master</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Merging the subpath back into the original repository</h2>
+
+<p>We use <code>git subtree</code> from earlier for this.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git subtree add --prefix my-api --squash git@github.com:adhipg/new-remote.git master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>--squash</code> here implies that we just want to create a merge commit - else,
+we&#8217;ll end up with  duplicate commits in the history.</p>
+]]></content>
+  </entry>
   
 </feed>
