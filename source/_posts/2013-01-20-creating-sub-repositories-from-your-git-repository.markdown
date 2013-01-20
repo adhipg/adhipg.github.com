@@ -5,7 +5,7 @@ date: 2013-01-20 00:27
 comments: false
 categories: notes
 tags: [git, git-subtree]
-published: false
+published: true
 ---
 
 So you have a nice big project that you've been working on for a while and you
