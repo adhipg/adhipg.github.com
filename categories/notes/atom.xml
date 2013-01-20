@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes | Adhip Gupta]]></title>
   <link href="http://adhipg.in/categories/notes/atom.xml" rel="self"/>
   <link href="http://adhipg.in/"/>
-  <updated>2013-01-20T11:01:44+00:00</updated>
+  <updated>2013-01-20T11:33:10+00:00</updated>
   <id>http://adhipg.in/</id>
   <author>
     <name><![CDATA[Adhip Gupta]]></name>
@@ -84,7 +84,9 @@ git subtree add --prefix my-api --squash git@github.com:adhipg/new-remote.git ma
 </code></p>
 
 <p>The <code>--squash</code> here implies that we just want to create a merge commit - else,
-we'll end up with  duplicate commits in the history.</p>
+we'll end up with duplicate commits in the history.</p>
+
+<p><em>Up Next: Maintaining both the repositories simultaneously.</em></p>
 ]]></content>
   </entry>
   
