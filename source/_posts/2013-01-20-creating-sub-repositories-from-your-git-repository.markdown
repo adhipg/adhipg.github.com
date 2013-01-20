@@ -71,6 +71,8 @@ git subtree add --prefix my-api --squash git@github.com:adhipg/new-remote.git ma
 ```
 
 The `--squash` here implies that we just want to create a merge commit - else,
-we'll end up with  duplicate commits in the history.
+we'll end up with duplicate commits in the history.
 
+
+*Up Next: Maintaining both the repositories simultaneously.*
 
