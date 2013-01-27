@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: notes | Adhip Gupta]]></title>
-  <link href="http://adhipg.in/categories/notes/atom.xml" rel="self"/>
+  <link href="http://adhipg.in//notes/atom.xml" rel="self"/>
   <link href="http://adhipg.in/"/>
-  <updated>2013-01-27T22:12:47+00:00</updated>
+  <updated>2013-01-27T22:14:09+00:00</updated>
   <id>http://adhipg.in/</id>
   <author>
     <name><![CDATA[Adhip Gupta]]></name>
