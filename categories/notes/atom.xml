@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes | Adhip Gupta]]></title>
   <link href="http://adhipg.in/categories/notes/atom.xml" rel="self"/>
   <link href="http://adhipg.in/"/>
-  <updated>2013-01-27T21:46:38+00:00</updated>
+  <updated>2013-01-27T22:11:12+00:00</updated>
   <id>http://adhipg.in/</id>
   <author>
     <name><![CDATA[Adhip Gupta]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using custom attributes in Markdown links]]></title>
+    <link href="http://adhipg.in/notes/using-custom-attributes-in-markdown-links/"/>
+    <updated>2013-01-27T21:58:00+00:00</updated>
+    <id>http://adhipg.in/notes/using-custom-attributes-in-markdown-links</id>
+    <content type="html"><![CDATA[<p>This blog runs on Octopress &mdash; which means that I write posts in Markdown.</p>
+
+<p>I'm presently a big fan of <a href="http://microformats.org/">Microformats</a> and wanted
+to include <a href="http://microformats.org/wiki/rel-me"><code>rel="me"</code></a> links to other
+websites that I use.</p>
+
+<p>After searching a little for a clean solution, I realised that Markdown is
+<a href="http://daringfireball.net/projects/markdown/syntax#html">HTML-compatible</a> - I
+can simply write in the exact HTML I need for the link within my Markdown file.</p>
+
+<h3>Example:</h3>
+
+<p>Instead of writing something like</p>
+
+<p><code>[@adhipg](http://twitter.com/adhipg)</code></p>
+
+<p>and then trying to add custom attributes; I can simply write</p>
+
+<p><code>&lt;a href="http://twitter.com/adhipg" rel="me"&gt;@adhipg&lt;/a&gt;</code>.</p>
+
+<p>Obviously you can use this for any other custom attributes/html you want.</p>
+
+<p>Ugly - yes. But it works and does not need JavaScript.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating sub-repositories from your git repository]]></title>

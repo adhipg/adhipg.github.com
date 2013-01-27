@@ -9,8 +9,8 @@
   <meta name="author" content="Adhip Gupta">
 
   
-  <meta name="description" content="So you have a nice big project that you&#8217;ve been working on for a while and you
-are at a state where you think it will be nice to split a part &hellip;">
+  <meta name="description" content="This blog runs on Octopress &mdash; which means that I write posts in Markdown. I&#8217;m presently a big fan of Microformats and wanted
+to include &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,64 @@ are at a state where you think it will be nice to split a part &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/notes/using-custom-attributes-in-markdown-links/">Using Custom Attributes in Markdown Links</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-27T21:58:00+00:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This blog runs on Octopress &mdash; which means that I write posts in Markdown.</p>
+
+<p>I&#8217;m presently a big fan of <a href="http://microformats.org/">Microformats</a> and wanted
+to include <a href="http://microformats.org/wiki/rel-me"><code>rel="me"</code></a> links to other
+websites that I use.</p>
+
+<p>After searching a little for a clean solution, I realised that Markdown is
+<a href="http://daringfireball.net/projects/markdown/syntax#html">HTML-compatible</a> - I
+can simply write in the exact HTML I need for the link within my Markdown file.</p>
+
+<h3>Example:</h3>
+
+<p>Instead of writing something like</p>
+
+<p><code>[@adhipg](http://twitter.com/adhipg)</code></p>
+
+<p>and then trying to add custom attributes; I can simply write</p>
+
+<p><code>&lt;a href="http://twitter.com/adhipg" rel="me"&gt;@adhipg&lt;/a&gt;</code>.</p>
+
+<p>Obviously you can use this for any other custom attributes/html you want.</p>
+
+<p>Ugly - yes. But it works and does not need JavaScript.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>

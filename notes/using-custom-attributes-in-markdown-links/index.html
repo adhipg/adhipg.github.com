@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Creating sub-repositories from your git repository - Adhip Gupta</title>
+  <title>Using custom attributes in Markdown links - Adhip Gupta</title>
   <meta name="author" content="Adhip Gupta">
 
   
-  <meta name="description" content="So you have a nice big project that you&#8217;ve been working on for a while and you
-are at a state where you think it will be nice to split a part &hellip;">
+  <meta name="description" content="This blog runs on Octopress &mdash; which means that I write posts in Markdown. I&#8217;m presently a big fan of Microformats and wanted
+to include &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ are at a state where you think it will be nice to split a part &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://adhipg.in/notes/creating-sub-repositories-from-your-git-repository/">
+  <link rel="canonical" href="http://adhipg.in/notes/using-custom-attributes-in-markdown-links/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,7 +83,7 @@ are at a state where you think it will be nice to split a part &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Creating Sub-repositories From Your Git Repository</h1>
+      <h1 class="entry-title">Using Custom Attributes in Markdown Links</h1>
     
     
       <p class="meta">
@@ -99,83 +99,36 @@ are at a state where you think it will be nice to split a part &hellip;">
   
 
 
-<time datetime="2013-01-20T00:27:00+00:00" pubdate data-updated="true">Jan 20<span>th</span>, 2013</time>
+<time datetime="2013-01-27T21:58:00+00:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>So you have a nice big project that you&#8217;ve been working on for a while and you
-are at a state where you think it will be nice to split a part of the project.
-This can be to either create it as a library to use it with other projects or
-just maintain it independantly.</p>
+<div class="entry-content"><p>This blog runs on Octopress &mdash; which means that I write posts in Markdown.</p>
 
-<p>There are two steps involved:</p>
+<p>I&#8217;m presently a big fan of <a href="http://microformats.org/">Microformats</a> and wanted
+to include <a href="http://microformats.org/wiki/rel-me"><code>rel="me"</code></a> links to other
+websites that I use.</p>
 
-<ul>
-<li>Splitting out the subpath from the repository and creating a new repository
-from it.</li>
-<li>Using this new git repository we&#8217;ve created in the main repository so that we
-can continue working.</li>
-</ul>
+<p>After searching a little for a clean solution, I realised that Markdown is
+<a href="http://daringfireball.net/projects/markdown/syntax#html">HTML-compatible</a> - I
+can simply write in the exact HTML I need for the link within my Markdown file.</p>
 
+<h3>Example:</h3>
 
-<p>Let&#8217;s tackle them one at a time.</p>
+<p>Instead of writing something like</p>
 
-<h2>Splitting a subpath into a new repository</h2>
+<p><code>[@adhipg](http://twitter.com/adhipg)</code></p>
 
-<p>I&#8217;m assuming that we&#8217;re interested in keeping the git history - else, you can
-simply just copy out the directory into a new folder and init it as a new
-repository.</p>
+<p>and then trying to add custom attributes; I can simply write</p>
 
-<h4>Using <code>git filter-branch</code></h4>
+<p><code>&lt;a href="http://twitter.com/adhipg" rel="me"&gt;@adhipg&lt;/a&gt;</code>.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git filter-branch --prune=empty --subdirectory-filter my-api -- --all</span></code></pre></td></tr></table></div></figure>
+<p>Obviously you can use this for any other custom attributes/html you want.</p>
 
-
-<p>The <code>-- --all</code> is to ensure that we filter all the branches in the repository.</p>
-
-<p>Next, you simply add new remotes and push your repository there.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add my-new-remote git@github.com:adhipg/new-remote.git
-</span><span class='line'>git push --all</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Side note: You&#8217;ll have to clone the original repository again.</p>
-
-<h4>Using <code>git subtree</code></h4>
-
-<p><a href="https://github.com/gitster/git/blob/634392b26275fe5436c0ea131bc89b46476aa4ae/contrib/subtree/git-subtree.txt"><code>git subtree</code></a>
-is a new git command that recently was added into git. Using it to create the
-new repository is simple enough:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git subtree split --prefix my-api --branch my-api-repo</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now the <code>my-api-repo</code> branch consists of just the contents from my-api and all
-the relevant commits. This can now be used to push to a new remote:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git push git@github.com:adhipg/new-remote.git split:master</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Merging the subpath back into the original repository</h2>
-
-<p>We use <code>git subtree</code> from earlier for this.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git subtree add --prefix my-api --squash git@github.com:adhipg/new-remote.git master</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The <code>--squash</code> here implies that we just want to create a merge commit - else,
-we&#8217;ll end up with duplicate commits in the history.</p>
-
-<p><em>Up Next: Maintaining both the repositories simultaneously.</em></p>
+<p>Ugly - yes. But it works and does not need JavaScript.</p>
 </div>
 
 
@@ -198,7 +151,7 @@ we&#8217;ll end up with duplicate commits in the history.</p>
   
 
 
-<time datetime="2013-01-20T00:27:00+00:00" pubdate data-updated="true">Jan 20<span>th</span>, 2013</time>
+<time datetime="2013-01-27T21:58:00+00:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -212,7 +165,7 @@ we&#8217;ll end up with duplicate commits in the history.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://adhipg.in/notes/creating-sub-repositories-from-your-git-repository/" data-via="adhipg" data-counturl="http://adhipg.in/notes/creating-sub-repositories-from-your-git-repository/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://adhipg.in/notes/using-custom-attributes-in-markdown-links/" data-via="adhipg" data-counturl="http://adhipg.in/notes/using-custom-attributes-in-markdown-links/" >Tweet</a>
   
   
   
@@ -221,8 +174,8 @@ we&#8217;ll end up with duplicate commits in the history.</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/notes/creating-sub-repositories-from-your-git-repository/" title="Previous Post: Creating sub-repositories from your git repository">&laquo; Creating sub-repositories from your git repository</a>
       
-        <a class="basic-alignment right" href="/notes/using-custom-attributes-in-markdown-links/" title="Next Post: Using custom attributes in Markdown links">Using custom attributes in Markdown links &raquo;</a>
       
     </p>
   </footer>
