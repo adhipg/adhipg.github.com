@@ -4,7 +4,7 @@
   <title><![CDATA[Category: notes | Adhip Gupta]]></title>
   <link href="http://adhipg.in//notes/atom.xml" rel="self"/>
   <link href="http://adhipg.in/"/>
-  <updated>2013-01-27T22:15:34+00:00</updated>
+  <updated>2013-02-11T18:51:18+00:00</updated>
   <id>http://adhipg.in/</id>
   <author>
     <name><![CDATA[Adhip Gupta]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tracking your Toggl timer with tmux-powerline]]></title>
+    <link href="http://adhipg.in/notes/tracking-your-toggl-timer-with-tmux-powerline/"/>
+    <updated>2013-02-11T18:22:00+00:00</updated>
+    <id>http://adhipg.in/notes/tracking-your-toggl-timer-with-tmux-powerline</id>
+    <content type="html"><![CDATA[<p>I've recently started using <a href="http://toggl.com">Toggl</a> to track time spent on
+various things. But I usually forget to turn it on when I'm actually working.</p>
+
+<p>I wrote a little script that uses <a href="http://node.js">Node.JS</a> to get my active
+running timer on Toggl and display it on my
+<a href="https://github.com/erikw/tmux-powerline">tmux-powerline</a>. It displays nothing
+if no timer is running.</p>
+
+<p>The script can be found here:
+<div><script src='https://gist.github.com/4749181.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<p>Do remember to <code>chmod +x</code> the JS file and include it as a segment in your status
+bar.</p>
+
+<p>A screenshot for completeness:</p>
+
+<p><img src="/images/tmux-powerline-toggl.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Using custom attributes in Markdown links]]></title>
