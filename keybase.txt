@@ -1,0 +1,63 @@
+==================================================================
+https://keybase.io/adhipg
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://adhipg.in
+  * I am adhipg (https://keybase.io/adhipg) on keybase.
+  * I have a public key with fingerprint 5E62 8E26 72D6 C581 8F6F  33F5 AFB8 5A15 777F 6EF7
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "5e628e2672d6c5818f6f33f5afb85a15777f6ef7",
+            "host": "keybase.io",
+            "key_id": "afb85a15777f6ef7",
+            "uid": "73648d7044a61a5d765e06d2eaf08c00",
+            "username": "adhipg"
+        },
+        "service": {
+            "hostname": "adhipg.in",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1402943432,
+    "expire_in": 157680000,
+    "prev": "5179a4e08ef1529b046a3b066e5588380a3ba6f0720ee5d93f91a2e492322e5a",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+
+owGbwMvMwMXY+++dk5zzOx7G0wfeJjEEz7corFZKyk+pVLKqVspOBVNpmXnpqUUF
+RZl5JUpWSqapZkYWqUZm5kYpZsmmFoYWaWZpxsZppolpSRamiYam5ubmaWapaeZK
+OkoZ+cUgHUBjkhKLU/Uy84FiQE58ZgpQFIv6UrCEubGZiUWKuYGJSaKZYaJpirmZ
+aaqBWYpRamKagUWygQFIYXFqUV5ibirImJSMzIJ0pVodJaBYWWZyKsjFIItR5PUy
+84DaCoryS/KT83OAwhklJQVWIF0llQUgZeWpSfFQA+KTMvNSgF4GaihLLSrOzM9T
+sjIEqkwuyQSZaGhiYGRpYmxibKSjlFpRkFmUGp8JUmFqbmZhAAQga1LLQAFlaG6Z
+aJJqYJGaZmhqZJlkYGKWaJxkYGaWampqYWFsYQDkJZqlGZgbGaSmmqZYGqdZGiYa
+pZpYGhkbGaWaJiqBvFSYl69kZQJ0ZmI60MjizPS8xJLSolSlWq5ORhkWBkYuBjZW
+JlCsMXBxCsDi0m8y+z9Dtse7O0qTvt0Wv6u9prRd/KLD5jvPN3b/uSCV8SC0pYvP
+uWLH1iKmRs91mZPnPlf06v3k8M9y1quc4lOc89o9k65cKNmy1P0CW13WTJOi97X6
+qx5FJ+/7mdkUbmErFBC8t4qj/XG2Xs7X598rds2NKvDYqDtHTvZtvIInZ0Twl5ni
+xxfbnZxxyD7cUai7Mj0/wrU1+87S6c7MpnP33dB6cKXpqlBwki//mpcaX16vf/3f
+Kb73orFw4bYj1vumzLh8bhs3g0erXFcNL8PL8Kq1ex44f7RpCk2ZnSR6XfVr5a13
+81f5q1k92SC9kOm/QUbGotm6X++7XbRJO/lZUGXPRL09YR8nd8+10PjS9hsA
+=cg74
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/adhipg
+
+==================================================================
